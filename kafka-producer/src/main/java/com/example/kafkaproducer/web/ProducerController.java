@@ -15,12 +15,12 @@ public class ProducerController {
     private final UsersService userService;
     private final NewsService newsService;
 
-    @PostMapping
+    @PostMapping("/users")
     public void sendMessageToUser(@RequestParam String topic, @RequestBody UsersDto users){
         userService.sendMessage(topic, users);
     }
 
-    @PostMapping
+    @PostMapping("/news")
     public void sendMessageToNews(@RequestParam String topic, @RequestBody NewsDto news){
         newsService.sendMessage(topic, news);
     }
